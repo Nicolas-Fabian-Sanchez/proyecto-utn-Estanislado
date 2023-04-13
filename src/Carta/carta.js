@@ -1,4 +1,5 @@
 import './carta.css'
+//import porciones from '../ResumenPedido/Pedido'
 
 export default function Carta(){
     return(
@@ -8,39 +9,46 @@ export default function Carta(){
                 <div class="card">
                     <h3>Comidas al Plato</h3>
                     <form class="card1">
-                        <label><input type="radio"></input>Lomo con papas fritas</label>
-                        <label><input type="radio"></input>Milanesa a la Napolitana</label>
-                        <label><input type="radio"></input>Parrillada completa</label>
-                        <label><input type="radio"></input>Bife a la Española</label>
+                        <label><input type="checkbox"></input>Lomo con papas fritas<porciones/>
+                        </label>
+                        <label><input type="checkbox"></input>Milanesa a la Napolitana</label>
+                        <label><input type="checkbox"></input>Parrillada completa</label>
+                        <label><input type="checkbox"></input>Bife a la Española</label>
                     </form>
                 </div>
                 <div class="card">
                     <h3>Picadas</h3>
                     <form>
-                        <label><input type="radio"></input>Tabla milanesa,papas fritas y picles(comen 4)</label>
-                        <label><input type="radio"></input>Tabla Estanislao,milanesa,papas fritas,picles,fiambre,enpanadas (comen 4)</label>
-                        <label><input type="radio"></input>Cazuelas</label>
-                        <label><input type="radio"></input>Tabla de Fiambres</label>
+                        <label><input type="checkbox"></input>Milanesa,papas fritas y picles(comen 4)</label>
+                        <label><input type="checkbox"></input>Milanesa,papas fritas,picles,fiambre,enpanadas(comen 4)</label>
+                        <label><input type="checkbox"></input>Cazuelas</label>
+                        <label><input type="checkbox"></input>Tabla de Fiambres</label>
                     </form>
                 </div>
                 <div class="card">
                     <h3>Bebidas con Alcohol</h3>
                     <form>
-                        <label><input type="radio"></input>Coca-Cola</label>
-                        <label><input type="radio"></input>Sprite</label>
-                        <label><input type="radio"></input>Agua</label>
-                        <label><input type="radio"></input>Limonada</label>
+                        <label><input type="checkbox"></input>Coca-Cola</label>
+                        <label><input type="checkbox"></input>Sprite</label>
+                        <label><input type="checkbox"></input>Agua</label>
+                        <label><input type="checkbox"></input>Limonada</label>
                     </form>
                 </div>
                 <div class="card">
                     <h3>Bebidas con Alcohol</h3>
                     <form>
-                        <label><input type="radio"></input>Vino tinto Santa Julia malbet</label>
-                        <label><input type="radio"></input>Vino blanco Tardio malbet</label>
-                        <label><input type="radio"></input>Fernet Branca</label>
-                        <label><input type="radio"></input>Gancia</label>
+                        <label><input type="checkbox"></input>Vino tinto Santa Julia malbet</label>
+                        <label><input type="checkbox"></input>Vino blanco Tardio malbet</label>
+                        <label><input type="checkbox"></input>Fernet Branca</label>
+                        <label><input type="checkbox"></input>Gancia</label>
                     </form>
                 </div>
+            </section>
+            <section>
+                <h2>SU PEDIDO:</h2>
+                <ul>
+                   
+                </ul>
             </section>
         </main>
     )
