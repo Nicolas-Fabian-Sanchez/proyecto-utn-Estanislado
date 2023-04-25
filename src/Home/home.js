@@ -4,7 +4,7 @@ export default function Home(){
   return(
       <header>
            <h1>"Bienvenidos a Estanislao"</h1>
-           <form    method="POST">
+           <form  action="http://localhost:4001/postmenu"  method="POST">
               <legend>Por favor ingrese el numero de mesa donde se encuentra sentado</legend>
               <div>
                 <label><input type="radio"></input>Mesa 1</label>

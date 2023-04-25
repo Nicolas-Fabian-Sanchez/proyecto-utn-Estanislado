@@ -1,10 +1,9 @@
-import Home from './Home/home'
-//import Carta from './Carta/carta.js'
+import RouterComponent from "../src/Ruteo/Router.js"
 import './App.css';
 
 function App() {
   return (
-     <Home/>
+     <RouterComponent/>
      
   );
 }

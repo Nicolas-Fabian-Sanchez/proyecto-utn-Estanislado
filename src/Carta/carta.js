@@ -1,14 +1,35 @@
+import{useEffect,useState} from "react";
 import './carta.css'
 //import porciones from '../ResumenPedido/Pedido'
 
-export default function Carta(){
+export default function carta(){
+    let [datos,setDatos]=useState([]);
+
+    const traerInfo=async()=>{
+        await fetch("http://localhost:4001/postmenu")
+            .then((res)=>res.json())
+            .then((dato)=>setDatos(dato))
+            .catch((error)=>document.write(`se pordujo un error ${error}`))
+    }
+
+    useEffect(()=>{
+        traerInfo();
+        setTimeout(()=>{console.log(datos)},5000)
+    },[])
+
+    return(
+        pass // falta hacer
+    )
+}
+
+/*export default function menu(){
     return(
         <main>
             <h1>Carta de comidas Estanislao</h1>
             <section>
-                <div class="card">
+                <div className="card">
                     <h3>Comidas al Plato</h3>
-                    <form class="card1">
+                    <form className="card1" action="http://localhost:4001/postpedido">
                         <label><input type="checkbox"></input>Lomo con papas fritas<porciones/>
                         </label>
                         <label><input type="checkbox"></input>Milanesa a la Napolitana</label>
@@ -34,7 +55,7 @@ export default function Carta(){
                         <label><input type="checkbox"></input>Limonada</label>
                     </form>
                 </div>
-                <div class="card">
+                <div className="card">
                     <h3>Bebidas con Alcohol</h3>
                     <form>
                         <label><input type="checkbox"></input>Vino tinto Santa Julia malbet</label>
@@ -52,4 +73,4 @@ export default function Carta(){
             </section>
         </main>
     )
-}
+}*/
