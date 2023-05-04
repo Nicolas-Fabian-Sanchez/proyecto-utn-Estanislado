@@ -1,8 +1,10 @@
 import{useEffect,useState} from "react";
-import './carta.css'
-//import porciones from '../ResumenPedido/Pedido'
+import './Carta.css';
+import Comidas from "./Comidas";
+import BotonPedido from "./BotonPedido";
 
-export default function carta(){
+
+export default function Carta(){
     let [datos,setDatos]=useState([]);
 
     const traerInfo=async()=>{
@@ -18,59 +20,21 @@ export default function carta(){
     },[])
 
     return(
-        pass // falta hacer
-    )
-}
-
-/*export default function menu(){
-    return(
         <main>
             <h1>Carta de comidas Estanislao</h1>
-            <section>
-                <div className="card">
-                    <h3>Comidas al Plato</h3>
-                    <form className="card1" action="http://localhost:4001/postpedido">
-                        <label><input type="checkbox"></input>Lomo con papas fritas<porciones/>
-                        </label>
-                        <label><input type="checkbox"></input>Milanesa a la Napolitana</label>
-                        <label><input type="checkbox"></input>Parrillada completa</label>
-                        <label><input type="checkbox"></input>Bife a la Española</label>
-                    </form>
-                </div>
-                <div class="card">
-                    <h3>Picadas</h3>
-                    <form>
-                        <label><input type="checkbox"></input>Milanesa,papas fritas y picles(comen 4)</label>
-                        <label><input type="checkbox"></input>Milanesa,papas fritas,picles,fiambre,enpanadas(comen 4)</label>
-                        <label><input type="checkbox"></input>Cazuelas</label>
-                        <label><input type="checkbox"></input>Tabla de Fiambres</label>
-                    </form>
-                </div>
-                <div class="card">
-                    <h3>Bebidas con Alcohol</h3>
-                    <form>
-                        <label><input type="checkbox"></input>Coca-Cola</label>
-                        <label><input type="checkbox"></input>Sprite</label>
-                        <label><input type="checkbox"></input>Agua</label>
-                        <label><input type="checkbox"></input>Limonada</label>
-                    </form>
-                </div>
-                <div className="card">
-                    <h3>Bebidas con Alcohol</h3>
-                    <form>
-                        <label><input type="checkbox"></input>Vino tinto Santa Julia malbet</label>
-                        <label><input type="checkbox"></input>Vino blanco Tardio malbet</label>
-                        <label><input type="checkbox"></input>Fernet Branca</label>
-                        <label><input type="checkbox"></input>Gancia</label>
-                    </form>
-                </div>
-            </section>
-            <section>
-                <h2>SU PEDIDO:</h2>
-                <ul>
-                   
-                </ul>
+            <section className="card">
+                <h3>Comidas al Plato</h3>
+                <form className="card1" action="http://localhost:4001/postpedido">
+                        {datos.map((dato)=>{
+                            return <Comidas key={datos.indexOf(dato)} info={dato}/>
+                        })}
+                        <legend>Su Pedido:</legend>
+                        <ul className="zonaPedido">
+
+                        </ul>
+                        <BotonPedido dato="Confimar Pedido" infoPath="/pedido" />
+                </form>
             </section>
         </main>
-    )
-}*/
+)
+}

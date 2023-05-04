@@ -1,4 +1,4 @@
-import RouterComponent from "../src/Ruteo/Router.js"
+import RouterComponent from "./ruteo/Router"
 import './App.css';
 
 function App() {
