@@ -8,7 +8,7 @@ export default function Carta(){
     let [datos,setDatos]=useState([]);
 
     const traerInfo=async()=>{
-        await fetch("http://localhost:4001/postmenu")
+        await fetch("http://localhost:4001/menuCompleto")
             .then((res)=>res.json())
             .then((dato)=>setDatos(dato))
             .catch((error)=>document.write(`se pordujo un error ${error}`))
@@ -22,12 +22,13 @@ export default function Carta(){
     return(
         <main>
             <h1>Carta de comidas Estanislao</h1>
-            <section className="card">
-                <h3>Comidas al Plato</h3>
-                <form className="card1" action="http://localhost:4001/postpedido">
-                        {datos.map((dato)=>{
-                            return <Comidas key={datos.indexOf(dato)} info={dato}/>
-                        })}
+            <section >
+             <form  action="http://localhost:4001/postpedido">
+                        <div className="card">
+                            {datos.map((dato)=>{
+                                return <Comidas key={datos} info={dato}/>
+                            })}
+                        </div>
                         <legend>Su Pedido:</legend>
                         <ul className="zonaPedido">
 

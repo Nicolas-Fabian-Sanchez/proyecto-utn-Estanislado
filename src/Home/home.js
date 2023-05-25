@@ -1,5 +1,4 @@
 import './Home.css';
-import "./Boton"
 import BotonIng from './Boton';
 export default function Home(){
   return(

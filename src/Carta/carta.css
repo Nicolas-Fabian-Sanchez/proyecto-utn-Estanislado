@@ -28,6 +28,7 @@ form{
     background-color: rgba(121, 118, 118, 0.897);
     border-radius: 10px;
     margin: 15px;
+   align-items: start;
 }
 label{
     display: block;

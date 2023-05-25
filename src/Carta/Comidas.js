@@ -1,6 +1,9 @@
-/*export default function Comidas({info}){
+export default function Comidas({info}){
     return(
-        <label><input type="checkbox" onClick={suPedido}></input>{info}</label>
+        <>
+        <label><input type="checkbox" /*onClick={suPedido}*/></input>{info.variedad} $ {info.precio}</label>
+        </>
+        
     )
 }
 
@@ -21,11 +24,12 @@ const pedidoActual=()=>{
     }
 
 }
-pedidoActual()
+//pedidoActual()
 
-const suPedido= ()=>{//falta captar el evento 
+const suPedido= (evento)=>{//falta captar el evento 
+    let imputSel = evento.target.value
     let item=document.createElement("li");
     item.innerText= `evento`;
     lista.appendChild(item);
     localStorage.setItem("listaPrevia",JSON.stringify(listaPedido))
-}*/
+}
