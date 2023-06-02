@@ -18,16 +18,22 @@ export default function Carta(){
         traerInfo();
         setTimeout(()=>{console.log(datos)},5000)
     },[])
-
+    /*const filtradoDatos = (datos)=>{
+        if(datos == "hamburguesa"){
+            return datos.map((dato)=>{
+                return <Comidas key={datos} info={dato}/>
+            })
+        }}*/
     return(
         <main>
             <h1>Carta de comidas Estanislao</h1>
             <section >
-             <form  action="http://localhost:4001/postpedido">
+             <form  action="https://api-estanislao.onrender.com/postpedido">
                         <div className="card">
-                            {datos.map((dato)=>{
-                                return <Comidas key={datos} info={dato}/>
-                            })}
+                           {datos.map(dato =>{
+                               return<Comidas key={datos} info={dato}/>
+                           })} 
+                           
                         </div>
                         <legend>Su Pedido:</legend>
                         <ul className="zonaPedido">
@@ -37,5 +43,5 @@ export default function Carta(){
                 </form>
             </section>
         </main>
-)
-}
+          )
+    }

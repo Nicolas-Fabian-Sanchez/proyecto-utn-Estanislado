@@ -1,6 +1,7 @@
 export default function Comidas({info}){
     return(
         <>
+        {info.filter((tipo)=> tipo === "hamburguesa")}//seguir de aca
         <label><input type="checkbox" /*onClick={suPedido}*/></input>{info.variedad} $ {info.precio}</label>
         </>
         
