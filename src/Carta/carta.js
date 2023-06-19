@@ -6,9 +6,9 @@ import BotonPedido from "./BotonPedido";
 
 export default function Carta(){
     let [datos,setDatos]=useState([]);
-
+    //let hamburguesas=[]
     const traerInfo=async()=>{
-        await fetch("http://localhost:4001/menuCompleto")
+        await fetch("https://api-estanislao.onrender.com/menuCompleto")
             .then((res)=>res.json())
             .then((dato)=>setDatos(dato))
             .catch((error)=>document.write(`se pordujo un error ${error}`))
@@ -16,7 +16,7 @@ export default function Carta(){
 
     useEffect(()=>{
         traerInfo();
-        setTimeout(()=>{console.log(datos)},5000)
+        //setTimeout(()=>{console.log(datos)},5000)
     },[])
     /*const filtradoDatos = (datos)=>{
         if(datos == "hamburguesa"){
@@ -30,9 +30,12 @@ export default function Carta(){
             <section >
              <form  action="https://api-estanislao.onrender.com/postpedido">
                         <div className="card">
+                           {/*hamburguesas = datos.filter(dato => dato.tipo == "hamburguesa")}
+                           {// console.log(hamburguesas)*/}
+                           
                            {datos.map(dato =>{
-                               return<Comidas key={datos} info={dato}/>
-                           })} 
+                               return <Comidas key={dato._id} info={dato} />
+                            })} 
                            
                         </div>
                         <legend>Su Pedido:</legend>
