@@ -12,13 +12,13 @@ export default function Comidas({info}){
     }*/
     const valorInput={
             "pedido":info.variedad,
-            "precio":info.precio
+            "totalPagar":info.precio
         }
         
     let porcion = 1 
     return(
         <div className= "tarjeta">
-          <label htmlFor="pedido"><input type="checkbox" id="pedido" name="pedido" value={`${valorInput.pedido} , ${valorInput.precio}`}>
+          <label htmlFor="pedido"><input type="checkbox" id="pedido" name="pedido" value={`${valorInput.pedido} , ${valorInput.totalPagar}`}>
           </input >{info.variedad} $ {info.precio}</label>
           {/*</div><button onClick={restar}className="botones">-</button><p className="boton1">{porcion} </p >
           <button onClick={sumar}  className="botones">+</button>*/}

@@ -25,7 +25,7 @@ export default function Home(){
   const ingresarMesa =async(evento)=>{
         evento.preventDefault();
         let pedido=[]
-        let precio=[]
+        let totalPagar=[]
         let mesa=""
         const inputSelecionados=document.querySelectorAll("input[type='checkbox']");
         inputSelecionados.forEach((checkbox)=>{
@@ -33,7 +33,7 @@ export default function Home(){
             let valor = checkbox.value
             let cambio = valor.split(",")
             pedido.push(cambio[0])
-            precio.push(cambio[1])
+            totalPagar.push(parseInt(cambio[1]))
           }
           
         })
@@ -49,7 +49,7 @@ export default function Home(){
       const form= JSON.stringify({
         "mesa":mesa,
         "pedido":pedido,
-        "precio":precio,
+        "totalPagar":totalPagar,
       })
       //console.log(ingresarMesa)
       console.log(evento)
@@ -68,7 +68,7 @@ export default function Home(){
 
   return(
       <>
-           <h1>"Bienvenidos a Estanislao"</h1>
+           <h1>"Bienvenidos a Estanislao RetoBar"</h1>
            <form  onSubmit={(evento)=>{ingresarMesa(evento)}}>
               <legend>Por favor ingrese el numero de mesa donde se encuentra sentado</legend>
               <div className = "mesas">
@@ -91,7 +91,7 @@ export default function Home(){
                                return <Comidas key={dato._id} info={dato} />
                             })} 
               </div>
-              <input type="submit" value="INGRESAR"  className="button"/>
+              <input type="submit" value="Confirmar Pedido"  className="button"/>
            </form>
             
       </>
