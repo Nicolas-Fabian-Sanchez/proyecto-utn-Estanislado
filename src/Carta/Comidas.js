@@ -17,25 +17,15 @@ export default function Comidas({info}){
             "pedido":info.variedad,
             "totalPagar":info.precio
         }
-        
-    let porcion = 1 
+
     return(
         <>
-         
-          
           <div className= "tarjeta">
-            
             <label htmlFor={info._id}><input type="checkbox" id={info._id} name="pedido"  value={`${valorInput.pedido} , ${valorInput.totalPagar}` }>
             </input >{info.variedad} $ {info.precio}</label>
           </div>
-          
-       
         </>
-       
-       
     )
-    
-   
 }
 /*--- creo una lista previa usando localStorage
 let listaPedido=[]
