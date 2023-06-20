@@ -10,6 +10,9 @@ h1{
     color: brown;
     margin-top: 15%;
 }
+h3{
+    text-decoration: underline;
+}
 form{
     color:aliceblue;
 }
@@ -48,11 +51,20 @@ legend{
     background-color: rgba(121, 118, 118, 0.897);
     border-radius: 10px;
     margin: 20px;
-   align-items: start;
 }
+.icono{
+    font-size:30px;
+}
+
+
 
 @media screen and (max-width:850px){
     .mesas{
         flex-wrap: wrap;
+    }
+}
+@media screen and (min-width:510px){
+    .card{
+        align-items: center;
     }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react"
+//import { useState } from "react"
 
 export default function Comidas({info}){
     /*const[porcion,setPorciones]=useState(1)
@@ -9,7 +9,10 @@ export default function Comidas({info}){
     const restar=()=>{
         setPorciones(porcion -1)
         return setPorciones
-    }*/
+    }
+    <button onFocus={restar}className="botones">-</button><p className="boton1">{porcion} </p >
+    <button onFocus={sumar}  className="botones">+</button>
+    */
     const valorInput={
             "pedido":info.variedad,
             "totalPagar":info.precio
@@ -17,12 +20,19 @@ export default function Comidas({info}){
         
     let porcion = 1 
     return(
-        <div className= "tarjeta">
-          <label htmlFor={info._id}><input type="checkbox" id={info._id} name="pedido" value={`${valorInput.pedido} , ${valorInput.totalPagar}`}>
-          </input >{info.variedad} $ {info.precio}</label>
-          {/*</div><button onClick={restar}className="botones">-</button><p className="boton1">{porcion} </p >
-          <button onClick={sumar}  className="botones">+</button>*/}
-        </div>
+        <>
+         
+          
+          <div className= "tarjeta">
+            
+            <label htmlFor={info._id}><input type="checkbox" id={info._id} name="pedido"  value={`${valorInput.pedido} , ${valorInput.totalPagar}` }>
+            </input >{info.variedad} $ {info.precio}</label>
+          </div>
+          
+       
+        </>
+       
+       
     )
     
    

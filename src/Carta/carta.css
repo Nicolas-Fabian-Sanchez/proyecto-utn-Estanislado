@@ -54,7 +54,8 @@ legend{
     flex-direction: row;
     align-items: center;
     justify-self: unset;
-    margin: 5px
+    margin: 5px;
+   
 }
 .botones{
     cursor: pointer;
@@ -68,4 +69,9 @@ legend{
     width: 10px;
     height: 20px;
     align-items: center;
+}
+@media screen and (max-width:324px){
+    .tarjeta{
+        font-size: 13px;
+    }
 }
